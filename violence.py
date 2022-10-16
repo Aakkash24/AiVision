@@ -28,19 +28,13 @@ longitude = g.latlng[1]
 geolocator = Nominatim(user_agent="geoapiExercises")
 
 cred = credentials.Certificate(
-    "threatdetecion-firebase-adminsdk-8lne6-e2740b87bd.json")
+    "Your firebase credentials.json")
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
 config = {
-    "apiKey": "AIzaSyAkANs98sDIhl2PV3RNCTzrFvXWEnhYcCc",
-    "authDomain": "threatdetecion.firebaseapp.com",
-    "projectId": "threatdetecion",
-    "databaseURL": "",
-    "storageBucket": "threatdetecion.appspot.com",
-    "messagingSenderId": "399294282193",
-    "appId": "1:399294282193:web:2fbc2961f9a844a465c8f0",
+    "Your API Key for Firebase"
 }
 
 firebase = pyrebase.initialize_app(config)
@@ -48,8 +42,8 @@ storage = firebase.storage()
 auth = firebase.auth()
 
 # AUTHENTICATED GMAIL ACCOUNT & PASSWORD ONLY
-email = "aakkashsuresh24@gmail.com"
-password = "123456"
+email = "Your email"
+password = "Your password"
 
 user = auth.sign_in_with_email_and_password(email, password)
 
@@ -210,7 +204,7 @@ def detectViolence(video, location, threat_image, threat_face, limit=None):
         # show the output image
         cv2.imshow("Image", output)
 
-        if(trueCount == 5):
+        if(trueCount == 30):
             if(imageSaved == 0):
                 if(label):
                     cv2.imwrite(filename, output)
@@ -229,12 +223,12 @@ def detectViolence(video, location, threat_image, threat_face, limit=None):
                 draw_faces(my_image, face_image, faces)
 
                 bot = telepot.Bot(
-                    '5722077217:AAFkPqnXjDyWaj4SCNdMfbf978E8A39s0_A')
-                bot.sendMessage(-770213115,
+                    'Your telebot id')
+                bot.sendMessage("Your group id",
                                 f"VIOLENCE ALERT!! \nLOCATION: {location} \nTIME: {timeMoment}")
-                bot.sendPhoto(-770213115, photo=open(my_image, 'rb'))
-                bot.sendMessage(-770213115, "FACES OBTAINED")
-                bot.sendPhoto(-770213115, photo=open(face_image, 'rb'))
+                bot.sendPhoto("Your group id", photo=open(my_image, 'rb'))
+                bot.sendMessage("Your group id", "FACES OBTAINED")
+                bot.sendPhoto("Your group id", photo=open(face_image, 'rb'))
 
                 storage.child(my_image).put(my_image)
                 storage.child(face_image).put(face_image)
@@ -261,5 +255,5 @@ def detectViolence(video, location, threat_image, threat_face, limit=None):
     vs.release()
 
 
-detectViolence("fighting in the bunk trimmed.mp4", "St.Joseph's AV  ",
-               "stj_av_threat_image.jpg", "stj_av_threat_face.png")
+detectViolence("file_name.mp4", "Location ",
+               "Name_of_the_violent_frame.jpg", "suspect_face.png")

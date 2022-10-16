@@ -10,3 +10,6 @@ Given that a violence is happening in the place, the model calls another functio
 
 3. Alerting the concerned authorities:
 Now the violent frame and the image with suspects is saved. To alert the authorities, we have integrated an Telegram Bot with which the detials of the incident will be alerted on the go.
+
+4. Firebase Database Integration:
+An cloud database "Firebase" is also integrated, which stores the details of the incident like the location, time, violent_frame,etc which can be integrated with an Web or Mobile Application that can be used by higher authorities for taking further investigation on the incident.

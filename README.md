@@ -1,15 +1,17 @@
 # AiVision
 AiVision is an AI based software designed to automate the process of manually monitoring the surveillance system, detects threats and alerts the concerned authorities.
 
-Project flow:
-1. Violence detection:
-The CCTV frames will be fed into the model lively and the model will try to predict if the frame contains violence. A threshold of upto 30 frames is set to confirm that a violence is occuring in the place. So, the violent frame is saved and the next step is to figure out any suspects in the frame. This prediction part is done on the top of MobileNetV2 model
+The product aims to provide an automated surveillance system that can detect and alert users about potential security threats in real-time. The system is designed to be accessible and user-friendly by integrating with Telegram, a popular messaging app, to provide instant notifications and remote control of the surveillance system.
 
-2. Face detection:
-Given that a violence is happening in the place, the model calls another function to detect suspects involved in the last violent identified frame and stores them. The face detection part is done using the PIL
 
-3. Alerting the concerned authorities:
-Now the violent frame and the image with suspects is saved. To alert the authorities, we have integrated an Telegram Bot with which the detials of the incident will be alerted on the go.
+Features:
+1. Real-time monitoring: AiVision uses computer vision and machine learning algorithms to analyze video streams from cameras and detect potential security threats such as intruders, suspicious movements, or objects left behind.
+2. Alerts and notifications: When a potential threat is detected, AiVision sends a real-time notification to the user via Telegram, including a screenshot or a short video clip of the event. The user can quickly respond to the alert by accessing the surveillance system remotely via Telegram.
+3. Telegram integration: AiVision is integrated with Telegram, allowing users to control and access the surveillance system from their mobile devices or desktops. Users can view live video feeds, control camera settings, and receive notifications and alerts from anywhere.
 
-4. Firebase Database Integration:
-An cloud database "Firebase" is also integrated, which stores the details of the incident like the location, time, violent_frame,etc which can be integrated with an Web or Mobile Application that can be used by higher authorities for taking further investigation on the incident.
+Technology stack: AiVision uses several technologies and frameworks to implement its features, such as:
+1. Computer vision and machine learning libraries, such as OpenCV and TensorFlow, for video processing and object detection.
+2. Python programming language for server-side scripting and algorithms.
+3. Telegram API for integration with the Telegram messaging app.
+
+Use cases: AiVision can be used in various scenarios where security and surveillance are critical, such as homes, offices, stores, or public areas. AiVision can also be customized for specific use cases, such as detecting fire hazards or monitoring industrial equipment.
